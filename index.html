@@ -1027,6 +1027,37 @@ button.wpforms-submit:hover,
     applyBrandkitLogoVariant();
   }
 
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  function isReloadNavigation() {
+    if (window.performance && typeof window.performance.getEntriesByType === "function") {
+      const navigationEntries = window.performance.getEntriesByType("navigation");
+      if (navigationEntries && navigationEntries.length > 0) {
+        return navigationEntries[0].type === "reload";
+      }
+    }
+
+    if (window.performance && window.performance.navigation) {
+      return window.performance.navigation.type === 1;
+    }
+
+    return false;
+  }
+
+  function forceTopOnReload() {
+    if (!isReloadNavigation()) {
+      return;
+    }
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    window.scrollTo(0, 0);
+  }
+
   function onScroll() {
     if (!header) {
       return;
@@ -1041,6 +1072,7 @@ button.wpforms-submit:hover,
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("load", forceTopOnReload);
   onScroll();
   applySiteMode();
 

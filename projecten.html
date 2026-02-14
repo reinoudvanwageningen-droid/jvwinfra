@@ -457,7 +457,39 @@
         applyBrandkitLogoVariant();
       }
 
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+
+      function isReloadNavigation() {
+        if (window.performance && typeof window.performance.getEntriesByType === "function") {
+          const navigationEntries = window.performance.getEntriesByType("navigation");
+          if (navigationEntries && navigationEntries.length > 0) {
+            return navigationEntries[0].type === "reload";
+          }
+        }
+
+        if (window.performance && window.performance.navigation) {
+          return window.performance.navigation.type === 1;
+        }
+
+        return false;
+      }
+
+      function forceTopOnReload() {
+        if (!isReloadNavigation()) {
+          return;
+        }
+
+        if (window.location.hash) {
+          window.history.replaceState(null, "", window.location.pathname + window.location.search);
+        }
+
+        window.scrollTo(0, 0);
+      }
+
       applySiteMode();
+      window.addEventListener("load", forceTopOnReload);
       if (window.matchMedia) {
         const query = window.matchMedia("(prefers-color-scheme: dark)");
         if (typeof query.addEventListener === "function") {

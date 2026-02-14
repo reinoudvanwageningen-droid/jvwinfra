@@ -604,8 +604,9 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  padding: 10px 16px 10px 18px;
+  position: relative;
+  gap: 0;
+  padding: 10px 48px 10px 18px;
   min-height: 46px;
   border-radius: 999px;
   background: var(--jvw-brand-accent);
@@ -621,7 +622,8 @@ body {
 }
 
 .jvw-cta-text {
-  display: inline-block;
+  display: block;
+  text-align: center;
   line-height: 1.2;
 }
 
@@ -642,6 +644,10 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .jvw-cta-arrow img {
@@ -805,9 +811,8 @@ button.wpforms-submit:hover,
   }
 
   .jvw-cta {
-    padding: 9px 14px 9px 16px;
+    padding: 9px 44px 9px 16px;
     min-height: 42px;
-    gap: 9px;
     font-size: 13px;
   }
 

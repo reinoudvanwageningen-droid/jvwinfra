@@ -601,12 +601,12 @@ body {
 }
 
 .jvw-cta {
-  display: inline-flex;
+  display: inline-grid;
+  grid-template-columns: 24px minmax(0, 1fr) 24px;
+  column-gap: 10px;
   align-items: center;
   justify-content: center;
-  position: relative;
-  gap: 0;
-  padding: 10px 48px 10px 18px;
+  padding: 10px 16px;
   min-height: 46px;
   border-radius: 999px;
   background: var(--jvw-brand-accent);
@@ -621,10 +621,18 @@ body {
   transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
+.jvw-cta::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+}
+
 .jvw-cta-text {
   display: block;
+  width: 100%;
   text-align: center;
   line-height: 1.2;
+  grid-column: 2;
 }
 
 .jvw-cta:hover {
@@ -644,10 +652,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  grid-column: 3;
   overflow: hidden;
 }
 
@@ -779,6 +784,8 @@ button.wpforms-submit:hover,
   line-height: 1.68;
   color: rgba(255, 255, 255, 0.95);
   text-wrap: pretty;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro:first-child,
@@ -790,11 +797,17 @@ button.wpforms-submit:hover,
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px 20px;
+  max-width: min(100%, 780px);
+  margin: 0 auto;
 }
 
 .elementor-2464 .elementor-element.elementor-element-06c5183 .elementor-icon-list-item.elementor-inline-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   width: 100%;
   margin-right: 0 !important;
+  text-align: center;
 }
 
 .elementor-2464 .elementor-element.elementor-element-06c5183 .elementor-icon-list-text,
@@ -806,6 +819,15 @@ button.wpforms-submit:hover,
 .elementor-2464 .elementor-element.elementor-element-6cd8d12 .elementor-icon-list-items {
   display: grid;
   gap: 10px;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.elementor-2464 .elementor-element.elementor-element-6cd8d12 .elementor-icon-list-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -815,9 +837,17 @@ button.wpforms-submit:hover,
   }
 
   .jvw-cta {
-    padding: 9px 44px 9px 16px;
+    grid-template-columns: 22px minmax(0, 1fr) 22px;
+    column-gap: 8px;
+    padding: 9px 12px;
     min-height: 42px;
     font-size: 13px;
+  }
+
+  .jvw-cta::before,
+  .jvw-cta-arrow {
+    width: 22px;
+    height: 22px;
   }
 
   .elementor-2464 .elementor-element.elementor-element-8f73ee5 {
@@ -868,6 +898,7 @@ button.wpforms-submit:hover,
 
   .elementor-2464 .elementor-element.elementor-element-06c5183 .elementor-icon-list-items.elementor-inline-items {
     grid-template-columns: 1fr;
+    max-width: 540px;
   }
 }
 

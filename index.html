@@ -707,15 +707,23 @@ button.wpforms-submit:hover,
       return "dark";
     }
 
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    }
-
-    return "light";
+    return null;
   }
 
   function applySiteMode() {
-    root.setAttribute("data-color-mode", resolveSiteMode());
+    const siteMode = resolveSiteMode();
+    if (siteMode) {
+      root.setAttribute("data-color-mode", siteMode);
+      if (body) {
+        body.setAttribute("data-color-mode", siteMode);
+      }
+      return;
+    }
+
+    root.removeAttribute("data-color-mode");
+    if (body) {
+      body.removeAttribute("data-color-mode");
+    }
   }
 
   function onScroll() {

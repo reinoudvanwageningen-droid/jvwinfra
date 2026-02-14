@@ -285,7 +285,9 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
 		<div class="elementor-element elementor-element-0075939 e-con-full elementor-hidden-mobile e-flex e-con e-child" data-id="0075939" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;none&quot;}">
 				<div class="elementor-element elementor-element-b2b4671 elementor-widget elementor-widget-text-editor" data-id="b2b4671" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									<p data-start="77" data-end="442">JVW Infra Service is gespecialiseerd in kleinschalige grond- en infrawerkzaamheden. Wij voeren onder andere ontgravingen voor funderingen en aanbouwen uit, leggen kabel- en leidingtracés aan en plaatsen buitenkasten en aardingsvoorzieningen. Met een praktische aanpak en jarenlange ervaring zorgen wij voor een nette en betrouwbare uitvoering van ieder project.</p>								</div>
+									<p class="hero-intro"><strong>JVW Infra Service voert kleinschalige grond- en infrawerkzaamheden uit met een praktische aanpak en vakkennis.</strong></p>
+									<p class="hero-intro">Van ontgravingen voor funderingen en aanbouwen tot kabel- en leidingtracés, buitenkasten en aardingsvoorzieningen.</p>
+									<p class="hero-intro">U krijgt duidelijke afspraken, korte lijnen en een nette, betrouwbare uitvoering van ieder project.</p>								</div>
 				</div>
 				</div>
 				</div>
@@ -746,11 +748,25 @@ button.wpforms-submit:hover,
   line-height: 1.08;
 }
 
-.elementor-2464 .elementor-element.elementor-element-b2b4671 p,
-.elementor-2464 .elementor-element.elementor-element-da038a8 p {
+.elementor-2464 .elementor-element.elementor-element-b2b4671 > .elementor-widget-container,
+.elementor-2464 .elementor-element.elementor-element-da038a8 > .elementor-widget-container {
+  display: grid;
+  gap: clamp(10px, 1.3vw, 16px);
+}
+
+.elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro,
+.elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro {
   margin: 0;
-  max-width: 72ch;
+  max-width: 66ch;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.68;
+  color: rgba(255, 255, 255, 0.95);
+  text-wrap: pretty;
+}
+
+.elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro:first-child,
+.elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro:first-child {
+  font-weight: 600;
 }
 
 @media (max-width: 1200px) {
@@ -800,9 +816,9 @@ button.wpforms-submit:hover,
     margin: 0 !important;
   }
 
-  .elementor-2464 .elementor-element.elementor-element-b2b4671 p,
-  .elementor-2464 .elementor-element.elementor-element-da038a8 p {
-    font-size: clamp(15px, 1.8vw, 17px);
+  .elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro,
+  .elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro {
+    font-size: clamp(15.5px, 2vw, 17.5px);
   }
 }
 
@@ -823,8 +839,13 @@ button.wpforms-submit:hover,
     max-width: 14ch;
   }
 
-  .elementor-2464 .elementor-element.elementor-element-da038a8 p {
-    font-size: 16px;
+  .elementor-2464 .elementor-element.elementor-element-da038a8 > .elementor-widget-container {
+    gap: 10px;
+  }
+
+  .elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro {
+    max-width: 42ch;
+    font-size: 15.5px;
     line-height: 1.62;
   }
 }
@@ -954,7 +975,9 @@ button.wpforms-submit:hover,
 					<div class="e-con-inner">
 				<div class="elementor-element elementor-element-da038a8 elementor-widget elementor-widget-text-editor" data-id="da038a8" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
-									<p data-start="77" data-end="442">JVW Infra Service is gespecialiseerd in kleinschalige grond- en infrawerkzaamheden. Wij voeren onder andere ontgravingen voor funderingen en aanbouwen uit, leggen kabel- en leidingtracés aan en plaatsen buitenkasten en aardingsvoorzieningen. Met een praktische aanpak en jarenlange ervaring zorgen wij voor een nette en betrouwbare uitvoering van ieder project.</p>								</div>
+									<p class="hero-intro"><strong>JVW Infra Service voert kleinschalige grond- en infrawerkzaamheden uit met een praktische aanpak en vakkennis.</strong></p>
+									<p class="hero-intro">Van ontgravingen voor funderingen en aanbouwen tot kabel- en leidingtracés, buitenkasten en aardingsvoorzieningen.</p>
+									<p class="hero-intro">U krijgt duidelijke afspraken, korte lijnen en een nette, betrouwbare uitvoering van ieder project.</p>								</div>
 				</div>
 					</div>
 				</div>

@@ -666,14 +666,27 @@ body {
 }
 
 @media (max-width: 900px) {
-  .jvw-nav,
-  .jvw-cta {
+  .jvw-nav {
     display: none;
+  }
+
+  .jvw-header-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .jvw-cta {
+    display: inline-grid;
+    width: min(100%, 340px);
+    margin: 2px auto 0;
+    order: 3;
   }
 
   .jvw-burger {
     display: block;
     margin-left: auto;
+    order: 2;
   }
 }
 
@@ -786,6 +799,11 @@ button.wpforms-submit:hover,
   text-wrap: pretty;
   text-align: center;
   margin-inline: auto;
+}
+
+.elementor-2464 .elementor-element.elementor-element-b2b4671 .elementor-widget-container,
+.elementor-2464 .elementor-element.elementor-element-da038a8 .elementor-widget-container {
+  text-align: center;
 }
 
 .elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro:first-child,
@@ -925,13 +943,33 @@ button.wpforms-submit:hover,
   }
 
   .elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro {
-    max-width: 42ch;
+    max-width: 36ch;
     font-size: 15.5px;
     line-height: 1.62;
   }
 
   .elementor-2464 .elementor-element.elementor-element-6cd8d12 .elementor-icon-list-text {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jvw-cta {
+    width: min(100%, 300px);
+    min-height: 40px;
+    font-size: 12.5px;
+    padding: 8px 10px;
+  }
+
+  .jvw-cta::before,
+  .jvw-cta-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .jvw-cta-arrow img {
+    width: 12px;
+    height: 12px;
   }
 }
 </style>

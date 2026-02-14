@@ -330,7 +330,8 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
 
 
 <a href="mailto:info@jvwinfraservice.nl" class="jvw-cta">
-  <span class="jvw-cta-text">Info@jvwinfraservice.nl</span>
+  <span class="jvw-cta-text jvw-cta-text-desktop">Info@jvwinfraservice.nl</span>
+  <span class="jvw-cta-text jvw-cta-text-mobile">Mail</span>
   <span class="jvw-cta-arrow">
     <img decoding="async"
       src="https://jvwinfraservice.nl/wp-content/uploads/2026/01/arrow-right-up-svgrepo-com-7.svg"
@@ -635,6 +636,10 @@ body {
   grid-column: 2;
 }
 
+.jvw-cta-text-mobile {
+  display: none;
+}
+
 .jvw-cta:hover {
   background: var(--jvw-brand-accent-hover);
   border-color: var(--jvw-brand-accent-hover);
@@ -678,9 +683,18 @@ body {
 
   .jvw-cta {
     display: inline-grid;
-    width: min(100%, 340px);
+    width: auto;
+    max-width: calc(100% - 20px);
     margin: 2px auto 0;
     order: 3;
+  }
+
+  .jvw-cta-text-desktop {
+    display: none;
+  }
+
+  .jvw-cta-text-mobile {
+    display: block;
   }
 
   .jvw-burger {
@@ -955,10 +969,10 @@ button.wpforms-submit:hover,
 
 @media (max-width: 480px) {
   .jvw-cta {
-    width: min(100%, 300px);
+    width: auto;
     min-height: 40px;
     font-size: 12.5px;
-    padding: 8px 10px;
+    padding: 8px 12px;
   }
 
   .jvw-cta::before,

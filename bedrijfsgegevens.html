@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bedrijfsgegevens | JVW Infra Service</title>
+  <link rel="icon" href="assets/images/cropped-JVW-Icon-32x32.png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/images/cropped-JVW-Icon-180x180.png" />
+  <style>
+    :root {
+      color-scheme: light;
+      --jvw-brand-accent: #ec7f24;
+      --jvw-brand-accent-hover: #d9711a;
+      --jvw-brand-navy: #083f62;
+      --jvw-page-bg: #f6f9fc;
+      --jvw-surface: #ffffff;
+      --jvw-surface-elevated: #ffffff;
+      --jvw-text-primary: #142028;
+      --jvw-text-secondary: #3b5160;
+      --jvw-border-soft: rgba(8, 63, 98, 0.16);
+      --jvw-shadow-elevated: 0 6px 18px rgba(8, 31, 50, 0.2);
+      --jvw-focus-ring: #ec7f24;
+      --jvw-focus-shadow: rgba(12, 0, 42, 0.5);
+    }
+
+    :root[data-color-mode="dark"] {
+      color-scheme: dark;
+      --jvw-page-bg: #081727;
+      --jvw-surface: #0f2538;
+      --jvw-surface-elevated: #11283d;
+      --jvw-text-primary: #eaf2fa;
+      --jvw-text-secondary: #c3d4e4;
+      --jvw-border-soft: rgba(255, 255, 255, 0.22);
+      --jvw-shadow-elevated: 0 10px 24px rgba(0, 0, 0, 0.45);
+      --jvw-focus-ring: #ff9f56;
+      --jvw-focus-shadow: rgba(0, 0, 0, 0.5);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-color-mode]) {
+        color-scheme: dark;
+        --jvw-page-bg: #081727;
+        --jvw-surface: #0f2538;
+        --jvw-surface-elevated: #11283d;
+        --jvw-text-primary: #eaf2fa;
+        --jvw-text-secondary: #c3d4e4;
+        --jvw-border-soft: rgba(255, 255, 255, 0.22);
+        --jvw-shadow-elevated: 0 10px 24px rgba(0, 0, 0, 0.45);
+        --jvw-focus-ring: #ff9f56;
+        --jvw-focus-shadow: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Work Sans", "Segoe UI", Arial, sans-serif;
+      background: var(--jvw-page-bg);
+      color: var(--jvw-text-primary);
+    }
+
+    a {
+      color: var(--jvw-brand-navy);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--jvw-brand-accent);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--jvw-focus-ring);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px var(--jvw-focus-shadow);
+    }
+
+    .jvw-header {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--jvw-surface-elevated);
+      border-bottom: 1px solid var(--jvw-border-soft);
+      box-shadow: var(--jvw-shadow-elevated);
+    }
+
+    .jvw-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .jvw-logo img {
+      height: 72px;
+      width: auto;
+      display: block;
+    }
+
+    .jvw-nav {
+      flex: 1;
+    }
+
+    .jvw-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .jvw-nav a {
+      color: var(--jvw-text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .jvw-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--jvw-brand-accent);
+      transition: width 0.2s ease;
+    }
+
+    .jvw-nav a:hover::after,
+    .jvw-nav a.is-active::after {
+      width: 100%;
+    }
+
+    .jvw-nav a.is-active {
+      color: var(--jvw-brand-accent);
+    }
+
+    .bedrijfsgegevens-page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(28px, 4vw, 56px) 24px clamp(44px, 5vw, 72px);
+    }
+
+    .bedrijfsgegevens-hero {
+      max-width: 72ch;
+      margin-bottom: clamp(22px, 3vw, 34px);
+    }
+
+    .bedrijfsgegevens-hero h1 {
+      margin: 0 0 14px;
+      font-size: clamp(32px, 4.5vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -1.2px;
+      color: var(--jvw-brand-navy);
+    }
+
+    .bedrijfsgegevens-hero p {
+      margin: 0;
+      color: var(--jvw-text-secondary);
+      line-height: 1.65;
+      font-size: clamp(16px, 1.4vw, 19px);
+    }
+
+    .info-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .info-card {
+      background: var(--jvw-surface);
+      border: 1px solid var(--jvw-border-soft);
+      border-radius: 18px;
+      box-shadow: var(--jvw-shadow-elevated);
+      padding: clamp(18px, 2.8vw, 28px);
+    }
+
+    .info-card h2 {
+      margin: 0 0 14px;
+      font-size: clamp(22px, 2.2vw, 27px);
+      line-height: 1.2;
+      letter-spacing: -0.4px;
+    }
+
+    .info-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .info-list li {
+      color: var(--jvw-text-secondary);
+      line-height: 1.55;
+    }
+
+    .info-label {
+      font-weight: 700;
+      color: var(--jvw-text-primary);
+      margin-right: 6px;
+    }
+
+    .info-note {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--jvw-border-soft);
+      color: var(--jvw-text-secondary);
+      line-height: 1.6;
+    }
+
+    .info-cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      background: var(--jvw-brand-accent);
+      color: #fff;
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+
+    .info-cta:hover {
+      background: var(--jvw-brand-accent-hover);
+      color: #fff;
+    }
+
+    @media (max-width: 860px) {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .jvw-header-inner {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 8px 12px;
+      }
+
+      .jvw-logo img {
+        height: 56px;
+      }
+
+      .jvw-nav {
+        width: 100%;
+      }
+
+      .jvw-nav ul {
+        justify-content: flex-start;
+        gap: 14px;
+      }
+
+      .jvw-nav a {
+        font-size: 14px;
+      }
+
+      .bedrijfsgegevens-page {
+        padding: 24px 14px 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="jvw-header">
+    <div class="jvw-header-inner">
+      <a href="index.html#page" class="jvw-logo" aria-label="Ga naar home">
+        <img
+          src="assets/images/Logo-jvw-infra-service.png"
+          class="brandkit-logo"
+          data-brandkit-logo="adaptive"
+          data-logo-light="assets/images/Logo-jvw-infra-service.png"
+          data-logo-dark="logo-jvw-brandkit-white.svg"
+          alt="JVW Infra Service logo"
+        />
+      </a>
+      <nav class="jvw-nav" aria-label="Hoofdnavigatie">
+        <ul>
+          <li><a href="index.html#diensten">Diensten</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="bedrijfsgegevens.html" class="is-active" aria-current="page">Bedrijfsgegevens</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="bedrijfsgegevens-page">
+    <section class="bedrijfsgegevens-hero" aria-labelledby="bedrijfsgegevens-title">
+      <h1 id="bedrijfsgegevens-title">Bedrijfsgegevens JVW Infra Service</h1>
+      <p>Hier vind je de belangrijkste gegevens van JVW Infra Service op één plek. Staat de informatie die je zoekt er niet tussen? Neem dan direct contact op.</p>
+    </section>
+
+    <section class="info-grid" aria-label="Overzicht bedrijfsgegevens">
+      <article class="info-card">
+        <h2>Algemene gegevens</h2>
+        <ul class="info-list">
+          <li><span class="info-label">Bedrijfsnaam:</span>JVW Infra Service</li>
+          <li><span class="info-label">Vestigingsadres:</span>Op aanvraag</li>
+          <li><span class="info-label">Werkgebied:</span>Regio Drechtsteden en Rotterdam</li>
+        </ul>
+        <p class="info-note">Voor projectbezoek of fysieke post kun je eerst telefonisch of per e-mail afstemmen.</p>
+      </article>
+
+      <article class="info-card">
+        <h2>Contact</h2>
+        <ul class="info-list">
+          <li><span class="info-label">Telefoon:</span><a href="tel:0646970719">06 46970719</a></li>
+          <li><span class="info-label">E-mail:</span><a href="mailto:info@jvwinfraservice.nl">info@jvwinfraservice.nl</a></li>
+          <li><span class="info-label">LinkedIn:</span><a href="https://www.linkedin.com/in/joost-van-wageningen-9538163a2/" target="_blank" rel="noopener noreferrer">Profiel bekijken</a></li>
+          <li><span class="info-label">YouTube:</span><a href="https://youtube.com/@jvw4772?si=N6F5Ns075HbC5VlD" target="_blank" rel="noopener noreferrer">Kanaal bekijken</a></li>
+        </ul>
+        <a class="info-cta" href="index.html#contact">Naar contactformulier</a>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const body = document.body;
+      const BRANDKIT_LOGO_LIGHT = "assets/images/Logo-jvw-infra-service.png";
+      const BRANDKIT_LOGO_DARK = "logo-jvw-brandkit-white.svg";
+
+      function resolveSiteMode() {
+        const explicitTheme =
+          root.getAttribute("data-theme") ||
+          body.getAttribute("data-theme") ||
+          body.getAttribute("data-color-mode");
+        if (explicitTheme === "light" || explicitTheme === "dark") {
+          return explicitTheme;
+        }
+        if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return null;
+      }
+
+      function applyBrandkitLogos(mode) {
+        const logos = document.querySelectorAll('img[data-brandkit-logo="adaptive"]');
+        logos.forEach(function (logo) {
+          const lightLogo = logo.getAttribute("data-logo-light") || BRANDKIT_LOGO_LIGHT;
+          const darkLogo = logo.getAttribute("data-logo-dark") || BRANDKIT_LOGO_DARK;
+          logo.src = mode === "dark" ? darkLogo : lightLogo;
+        });
+      }
+
+      function applySiteMode() {
+        const siteMode = resolveSiteMode();
+        if (siteMode) {
+          root.setAttribute("data-color-mode", siteMode);
+          body.setAttribute("data-color-mode", siteMode);
+          applyBrandkitLogos(siteMode);
+          return;
+        }
+        root.removeAttribute("data-color-mode");
+        body.removeAttribute("data-color-mode");
+        applyBrandkitLogos("light");
+      }
+
+      applySiteMode();
+
+      if (window.matchMedia) {
+        const query = window.matchMedia("(prefers-color-scheme: dark)");
+        if (typeof query.addEventListener === "function") {
+          query.addEventListener("change", applySiteMode);
+        } else if (typeof query.addListener === "function") {
+          query.addListener(applySiteMode);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

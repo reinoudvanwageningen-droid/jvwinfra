@@ -355,6 +355,9 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
   --jvw-page-bg: #f6f9fc;
   --jvw-surface: #ffffff;
   --jvw-surface-elevated: #ffffff;
+  --jvw-surface-panel: #ffffff;
+  --jvw-surface-card: #ffffff;
+  --jvw-surface-muted: #f1f1f1;
   --jvw-text-primary: #142028;
   --jvw-text-secondary: #3b5160;
   --jvw-text-on-dark: #ffffff;
@@ -389,6 +392,9 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
   --jvw-page-bg: #081727;
   --jvw-surface: #0f2538;
   --jvw-surface-elevated: #11283d;
+  --jvw-surface-panel: #0f2538;
+  --jvw-surface-card: #132c42;
+  --jvw-surface-muted: #17344c;
   --jvw-text-primary: #eaf2fa;
   --jvw-text-secondary: #c3d4e4;
   --jvw-border-soft: rgba(255, 255, 255, 0.22);
@@ -402,6 +408,7 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
   --jvw-cta-text: #0c002a;
   --ast-global-color-2: var(--jvw-text-primary);
   --ast-global-color-3: var(--jvw-text-secondary);
+  --e-global-color-secondary: var(--jvw-text-primary);
   --e-global-color-astglobalcolor2: var(--jvw-text-primary);
 }
 
@@ -411,6 +418,9 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
     --jvw-page-bg: #081727;
     --jvw-surface: #0f2538;
     --jvw-surface-elevated: #11283d;
+    --jvw-surface-panel: #0f2538;
+    --jvw-surface-card: #132c42;
+    --jvw-surface-muted: #17344c;
     --jvw-text-primary: #eaf2fa;
     --jvw-text-secondary: #c3d4e4;
     --jvw-border-soft: rgba(255, 255, 255, 0.22);
@@ -424,6 +434,7 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
     --jvw-cta-text: #0c002a;
     --ast-global-color-2: var(--jvw-text-primary);
     --ast-global-color-3: var(--jvw-text-secondary);
+    --e-global-color-secondary: var(--jvw-text-primary);
     --e-global-color-astglobalcolor2: var(--jvw-text-primary);
   }
 }
@@ -440,6 +451,37 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* Donkere modus: vervang witte vlakken met brandkit-surfaces */
+.elementor-2464 .elementor-element.elementor-element-0075939:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-0075939 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-2464 .elementor-element.elementor-element-57fa684:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-57fa684 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-2464 .elementor-element.elementor-element-81c1a1c:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-81c1a1c > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-2464 .elementor-element.elementor-element-d9489e8:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-d9489e8 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: var(--jvw-surface-panel) !important;
+}
+
+.elementor-2464 .elementor-element.elementor-element-e1f6add:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-e1f6add > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-2464 .elementor-element.elementor-element-3ba34ae:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-3ba34ae > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-2464 .elementor-element.elementor-element-985cf86:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-985cf86 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: var(--jvw-surface-card) !important;
+  border-color: var(--jvw-border-soft) !important;
+}
+
+.elementor-2464 .elementor-element.elementor-element-683b318:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-683b318 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-2464 .elementor-element.elementor-element-6e2bb8e:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-6e2bb8e > .elementor-motion-effects-container > .elementor-motion-effects-layer,
+.elementor-2464 .elementor-element.elementor-element-235a83a:not(.elementor-motion-effects-element-type-background),
+.elementor-2464 .elementor-element.elementor-element-235a83a > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: var(--jvw-surface-muted) !important;
 }
 
 ::selection {

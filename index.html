@@ -785,106 +785,251 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
     transition: transform 0.25s ease;
 }
 
-/* Betere verdeling in "Over JVW Infra Service" en contactblok */
-#over .elementor-element-ea6775f .elementor-widget-container p {
-    margin: 0 0 18px;
-    line-height: 1.8;
+/* Strakkere opmaak voor "Over JVW Infra Service" + contactkaart */
+.about-section {
+    position: relative;
+    scroll-margin-top: 110px;
 }
 
-#over .elementor-element-ea6775f .elementor-widget-container p:last-child {
-    margin-bottom: 0;
+.about-anchor {
+    position: relative;
+    top: -110px;
+    display: block;
+    height: 0;
+    visibility: hidden;
 }
 
-#contact .elementor-element-24462be {
-    gap: 12px;
+.about-container {
+    width: min(100%, 1240px);
+    margin-inline: auto;
 }
 
-#contact .elementor-element-66f6fbc .elementor-icon-list-items {
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.1fr 0.8fr;
+    gap: clamp(16px, 3vw, 40px);
+    align-items: start;
+}
+
+.about-media {
+    margin: 0;
+}
+
+.about-media img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.about-content {
+    max-width: 67ch;
+    color: var(--e-global-color-astglobalcolor6);
+}
+
+.about-title {
+    margin: 0 0 16px;
+    font-family: "Work Sans", Sans-serif;
+    font-size: clamp(32px, 3vw, 45px);
+    font-weight: 700;
+    letter-spacing: -1.4px;
+    line-height: 1.1;
+    color: var(--e-global-color-astglobalcolor6);
+}
+
+.about-content p {
+    margin: 0 0 16px;
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.72;
+}
+
+.about-lead {
+    font-weight: 500;
+}
+
+.about-body {
+    margin-bottom: 20px;
+}
+
+.about-list {
+    margin: 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 10px;
+    font-size: clamp(16px, 1.1vw, 18px);
+    line-height: 1.65;
+}
+
+.about-list li::marker {
+    color: #ec7f24;
+}
+
+.about-contact-card {
+    padding: clamp(20px, 2vw, 28px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--e-global-color-astglobalcolor6);
+    display: grid;
+    gap: 16px;
+}
+
+.about-contact-header {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.about-contact-avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+}
+
+.about-contact-card h3 {
+    margin: 0;
+    font-family: "Work Sans", Sans-serif;
+    font-size: clamp(20px, 1.8vw, 26px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--e-global-color-astglobalcolor6);
+}
+
+.about-contact-card p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.about-cta-group {
+    display: grid;
     gap: 10px;
 }
 
-@media (max-width: 767px) {
-    #over .elementor-element-ea6775f .elementor-widget-container p {
-        margin-bottom: 16px;
-        line-height: 1.75;
+.about-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--e-global-color-astglobalcolor6);
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-cta i {
+    font-size: 14px;
+}
+
+.about-cta-primary {
+    background: #ec7f24;
+    border-color: #ec7f24;
+    color: #0c002a;
+}
+
+.about-cta:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.about-cta-primary:hover {
+    background: #ff9442;
+    border-color: #ff9442;
+    color: #0c002a;
+}
+
+.about-cta:focus-visible {
+    outline: 3px solid #ec7f24;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px rgba(12, 0, 42, 0.5);
+}
+
+.about-cta-primary:focus-visible {
+    outline-color: #ffffff;
+}
+
+@media (max-width: 900px) {
+    .about-anchor {
+        top: -90px;
     }
 
-    #contact .elementor-element-24462be {
-        gap: 10px;
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-media img {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-title {
+        letter-spacing: -1px;
+    }
+
+    .about-content p,
+    .about-list {
+        line-height: 1.65;
     }
 }
 </style>				</div>
 				</div>
 					</div>
 				</div>
-		<div id="over" class="elementor-element elementor-element-a494862 e-con-full e-flex e-con e-parent" data-id="a494862" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-e33af10 e-con-full e-flex e-con e-child" data-id="e33af10" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-fb9cad7 elementor-widget elementor-widget-heading" data-id="fb9cad7" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Over JVW Infra Service</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-91b7b45 elementor-widget elementor-widget-image" data-id="91b7b45" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="1024" height="768" src="https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-1024x768.jpeg" class="attachment-large size-large wp-image-2122" alt="" srcset="https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-1024x768.jpeg 1024w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-300x225.jpeg 300w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-768x576.jpeg 768w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-1536x1152.jpeg 1536w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20.jpeg 1600w" sizes="(max-width: 1024px) 100vw, 1024px" />															</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-eccfd1e e-con-full e-flex e-con e-child" data-id="eccfd1e" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-ea6775f elementor-widget elementor-widget-text-editor" data-id="ea6775f" data-element_type="widget" data-e-type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Mijn naam is Joost van Wageningen, oprichter van JVW Infra Service. Ik ben al meerdere jaren actief in de grond-, weg- en waterbouw en heb in die tijd ruime ervaring opgedaan als zelfstandig machinist. Door te werken voor aannemers en loonwerkers heb ik een brede praktijkkennis opgebouwd binnen kleinschalige infrawerkzaamheden.</p><p>Ik richt mij volledig op het zelfstandig aannemen en uitvoeren van kleinschalige projecten. Ik werk gestructureerd, netjes en volgens afspraak. Betrouwbaarheid en duidelijke communicatie staan bij mij voorop, zodat opdrachtgevers weten waar ze aan toe zijn.</p>								</div>
-				</div>
-				</div>
-		<div id="contact" class="elementor-element elementor-element-c25b0fd e-con-full e-flex e-con e-child" data-id="c25b0fd" data-element_type="container" data-e-type="container">
-		<div class="elementor-element elementor-element-8000954 e-con-full e-flex e-con e-child" data-id="8000954" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-a60cf47 elementor-widget elementor-widget-image" data-id="a60cf47" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="797" height="798" src="https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414.png" class="attachment-large size-large wp-image-2433" alt="" srcset="https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414.png 797w, https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414-300x300.png 300w, https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414-150x150.png 150w, https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414-768x769.png 768w" sizes="(max-width: 797px) 100vw, 797px" />															</div>
-				</div>
-		<div class="elementor-element elementor-element-24462be e-con-full e-flex e-con e-child" data-id="24462be" data-element_type="container" data-e-type="container">
-				<div class="elementor-element elementor-element-2c83eaa elementor-widget elementor-widget-heading" data-id="2c83eaa" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Project bespreken?</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-acf710c elementor-widget elementor-widget-heading" data-id="acf710c" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;,&quot;_animation_delay&quot;:0}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Bel of mail ons direct.</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-66f6fbc elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="66f6fbc" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
-				<div class="elementor-widget-container">
-							<ul class="elementor-icon-list-items">
-							<li class="elementor-icon-list-item">
-											<a href="tel:0646970719">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fas fa-phone"></i>						</span>
-										<span class="elementor-icon-list-text">06 46970719</span>
-											</a>
-									</li>
-								<li class="elementor-icon-list-item">
-											<a href="mailto:info@jvwinfraservice.nl">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fas fa-envelope-open"></i>						</span>
-										<span class="elementor-icon-list-text">info@jvwinfraservice.nl</span>
-											</a>
-									</li>
-								<li class="elementor-icon-list-item">
-											<a href="https://www.linkedin.com/in/joost-van-wageningen-9538163a2/" target="_blank" rel="noopener noreferrer">
-
-												<span class="elementor-icon-list-icon">
-							<i aria-hidden="true" class="fab fa-linkedin-in"></i>						</span>
-										<span class="elementor-icon-list-text">LinkedIn profiel</span>
-											</a>
-									</li>
+		<section id="over" class="elementor-element elementor-element-a494862 e-con-full e-flex e-con e-parent about-section" data-id="a494862" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<span id="contact" class="about-anchor" aria-hidden="true"></span>
+			<div class="about-container container">
+				<div class="about-grid">
+					<figure class="about-media">
+						<img loading="lazy" decoding="async" width="1024" height="768" src="https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-1024x768.jpeg" class="attachment-large size-large wp-image-2122" alt="Joost van Wageningen van JVW Infra Service" srcset="https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-1024x768.jpeg 1024w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-300x225.jpeg 300w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-768x576.jpeg 768w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20-1536x1152.jpeg 1536w, https://jvwinfraservice.nl/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-11-at-20.51.20.jpeg 1600w" sizes="(max-width: 1024px) 100vw, 1024px" />
+					</figure>
+					<div class="about-content">
+						<h2 class="about-title">Over JVW Infra Service</h2>
+						<p class="about-lead">Ik ben Joost van Wageningen, oprichter van JVW Infra Service. Ik help bij kleinschalige grond-, weg- en waterbouwwerkzaamheden met een strakke planning en nette oplevering.</p>
+						<p class="about-body">Je krijgt een aanspreekpunt, duidelijke afspraken en werk dat klopt - van voorbereiding tot afronding.</p>
+						<ul class="about-list">
+							<li>Gestructureerd en volgens afspraak</li>
+							<li>Netjes werken en helder communiceren</li>
+							<li>Flexibel inzetbaar voor kleinschalige projecten</li>
 						</ul>
+					</div>
+					<aside class="about-contact-card" aria-labelledby="about-contact-title">
+						<div class="about-contact-header">
+							<img loading="lazy" decoding="async" width="797" height="798" src="https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414.png" class="about-contact-avatar attachment-large size-large wp-image-2433" alt="Portret van Joost van Wageningen" srcset="https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414.png 797w, https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414-300x300.png 300w, https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414-150x150.png 150w, https://jvwinfraservice.nl/wp-content/uploads/2026/01/Schermafbeelding-2026-01-12-144414-768x769.png 768w" sizes="60px" />
+							<h3 id="about-contact-title">Project bespreken?</h3>
 						</div>
+						<p>Bel of mail direct voor een snelle afstemming over jouw project.</p>
+						<div class="about-cta-group">
+							<a class="about-cta about-cta-primary" href="tel:0646970719" aria-label="Bel direct met Joost van Wageningen">
+								<i aria-hidden="true" class="fas fa-phone"></i>
+								<span>Bel direct</span>
+							</a>
+							<a class="about-cta" href="mailto:info@jvwinfraservice.nl" aria-label="Mail JVW Infra Service">
+								<i aria-hidden="true" class="fas fa-envelope-open"></i>
+								<span>Mail</span>
+							</a>
+							<a class="about-cta" href="https://www.linkedin.com/in/joost-van-wageningen-9538163a2/" target="_blank" rel="noopener noreferrer" aria-label="Bekijk het LinkedIn-profiel van Joost van Wageningen">
+								<i aria-hidden="true" class="fab fa-linkedin-in"></i>
+								<span>Bekijk LinkedIn</span>
+							</a>
+						</div>
+					</aside>
 				</div>
-				</div>
-				</div>
-				</div>
-				</div>
+			</div>
+		</section>
 		<div id="projecten" class="elementor-element elementor-element-d9489e8 e-flex e-con-boxed e-con e-parent" data-id="d9489e8" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="e-con-inner">
 		<div class="elementor-element elementor-element-4f73304 e-con-full e-flex e-con e-child" data-id="4f73304" data-element_type="container" data-e-type="container">

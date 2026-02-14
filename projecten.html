@@ -103,6 +103,12 @@
       display: block;
     }
 
+    .brandkit-logo {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
     .jvw-nav {
       flex: 1;
     }
@@ -295,7 +301,7 @@
   <header class="jvw-header">
     <div class="jvw-header-inner">
       <a href="index.html#page" class="jvw-logo" aria-label="Ga naar home">
-        <img src="https://jvwinfraservice.nl/wp-content/uploads/2025/12/Logo-jvw-infra-service.png" alt="JVW Infra Service logo" />
+        <img src="logo-jvw-brandkit.svg" class="brandkit-logo" data-brandkit-logo="adaptive" data-logo-light="logo-jvw-brandkit.svg" data-logo-dark="logo-jvw-brandkit-white.svg" alt="JVW Infra Service logo" />
       </a>
       <nav class="jvw-nav" aria-label="Hoofdnavigatie">
         <ul>
@@ -393,6 +399,38 @@
     (function () {
       const root = document.documentElement;
       const body = document.body;
+      const BRANDKIT_LOGO_LIGHT = "logo-jvw-brandkit.svg";
+      const BRANDKIT_LOGO_DARK = "logo-jvw-brandkit-white.svg";
+
+      function useDarkLogoVariant() {
+        const activeMode = root.getAttribute("data-color-mode");
+        if (activeMode === "dark") {
+          return true;
+        }
+        if (activeMode === "light") {
+          return false;
+        }
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+
+      function applyBrandkitLogoVariant() {
+        const logoVariant = useDarkLogoVariant() ? "dark" : "light";
+        const logos = document.querySelectorAll('img[data-brandkit-logo="adaptive"]');
+
+        logos.forEach(function (logo) {
+          const lightLogo = logo.getAttribute("data-logo-light") || BRANDKIT_LOGO_LIGHT;
+          const darkLogo = logo.getAttribute("data-logo-dark") || BRANDKIT_LOGO_DARK;
+          const targetSrc = logoVariant === "dark" ? darkLogo : lightLogo;
+
+          if (logo.getAttribute("src") !== targetSrc) {
+            logo.setAttribute("src", targetSrc);
+          }
+
+          if (logo.hasAttribute("srcset")) {
+            logo.removeAttribute("srcset");
+          }
+        });
+      }
 
       function resolveSiteMode() {
         const explicitTheme = root.getAttribute("data-theme") || body.getAttribute("data-theme") || body.getAttribute("data-color-mode");
@@ -410,10 +448,12 @@
         if (siteMode) {
           root.setAttribute("data-color-mode", siteMode);
           body.setAttribute("data-color-mode", siteMode);
+          applyBrandkitLogoVariant();
           return;
         }
         root.removeAttribute("data-color-mode");
         body.removeAttribute("data-color-mode");
+        applyBrandkitLogoVariant();
       }
 
       applySiteMode();

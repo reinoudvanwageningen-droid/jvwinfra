@@ -648,12 +648,16 @@ body {
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
+  overflow: hidden;
 }
 
 .jvw-cta-arrow img {
   width: 14px;
   height: 14px;
   display: block;
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 900px) {

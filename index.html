@@ -330,8 +330,7 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
 
 
 <a href="mailto:info@jvwinfraservice.nl" class="jvw-cta">
-  <span class="jvw-cta-text jvw-cta-text-desktop">Info@jvwinfraservice.nl</span>
-  <span class="jvw-cta-text jvw-cta-text-mobile">Mail</span>
+  <span class="jvw-cta-text">Info@jvwinfraservice.nl</span>
   <span class="jvw-cta-arrow">
     <img decoding="async"
       src="https://jvwinfraservice.nl/wp-content/uploads/2026/01/arrow-right-up-svgrepo-com-7.svg"
@@ -602,12 +601,11 @@ body {
 }
 
 .jvw-cta {
-  display: inline-grid;
-  grid-template-columns: 24px minmax(0, 1fr) 24px;
-  column-gap: 10px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
+  gap: 10px;
+  padding: 10px 18px;
   min-height: 46px;
   border-radius: 999px;
   background: var(--jvw-brand-accent);
@@ -622,22 +620,11 @@ body {
   transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-.jvw-cta::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-}
-
 .jvw-cta-text {
   display: block;
-  width: 100%;
+  white-space: nowrap;
   text-align: center;
   line-height: 1.2;
-  grid-column: 2;
-}
-
-.jvw-cta-text-mobile {
-  display: none;
 }
 
 .jvw-cta:hover {
@@ -657,7 +644,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  grid-column: 3;
   overflow: hidden;
 }
 
@@ -670,7 +656,7 @@ body {
   transform: translateY(-1px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .jvw-nav,
   .jvw-cta {
     display: none;
@@ -854,17 +840,9 @@ button.wpforms-submit:hover,
   }
 
   .jvw-cta {
-    grid-template-columns: 22px minmax(0, 1fr) 22px;
-    column-gap: 8px;
-    padding: 9px 12px;
+    padding: 9px 14px;
     min-height: 42px;
     font-size: 13px;
-  }
-
-  .jvw-cta::before,
-  .jvw-cta-arrow {
-    width: 22px;
-    height: 22px;
   }
 
   .elementor-2464 .elementor-element.elementor-element-8f73ee5 {
@@ -952,25 +930,6 @@ button.wpforms-submit:hover,
   }
 }
 
-@media (max-width: 480px) {
-  .jvw-cta {
-    width: auto;
-    min-height: 40px;
-    font-size: 12.5px;
-    padding: 8px 12px;
-  }
-
-  .jvw-cta::before,
-  .jvw-cta-arrow {
-    width: 20px;
-    height: 20px;
-  }
-
-  .jvw-cta-arrow img {
-    width: 12px;
-    height: 12px;
-  }
-}
 </style>
 
 

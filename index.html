@@ -1510,126 +1510,6 @@ button.wpforms-submit:hover,
     border-radius: 4px;
 }
 
-.jvw-site-footer-panel {
-    margin-top: clamp(28px, 5vw, 64px);
-    border-top: 1px solid var(--jvw-border-soft);
-    background: var(--jvw-surface-elevated);
-    padding: clamp(24px, 3vw, 40px) 0;
-}
-
-.jvw-site-footer-inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 clamp(14px, 3vw, 28px);
-    display: grid;
-    gap: clamp(18px, 2.6vw, 28px);
-}
-
-.jvw-footer-column {
-    display: grid;
-    gap: 12px;
-    align-content: start;
-}
-
-.jvw-footer-heading {
-    margin: 0;
-    font-size: clamp(20px, 2.2vw, 24px);
-    line-height: 1.2;
-    letter-spacing: -0.4px;
-    color: var(--jvw-text-primary);
-}
-
-.jvw-footer-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 8px;
-}
-
-.jvw-footer-links li {
-    margin: 0;
-    color: var(--jvw-text-secondary);
-    line-height: 1.55;
-}
-
-.jvw-footer-links a {
-    color: var(--jvw-text-primary);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.jvw-footer-links a:hover {
-    color: var(--jvw-brand-accent);
-    border-color: var(--jvw-brand-accent);
-}
-
-.jvw-footer-note {
-    margin: 2px 0 0;
-    color: var(--jvw-text-secondary);
-    line-height: 1.55;
-}
-
-.jvw-footer-details {
-    margin: 0;
-    border: 1px solid var(--jvw-border-soft);
-    border-radius: 12px;
-    background: var(--jvw-surface);
-    overflow: hidden;
-}
-
-.jvw-footer-details > summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-weight: 700;
-    color: var(--jvw-text-primary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-}
-
-.jvw-footer-details > summary::-webkit-details-marker {
-    display: none;
-}
-
-.jvw-footer-details > summary::after {
-    content: "+";
-    font-size: 18px;
-    line-height: 1;
-    color: var(--jvw-brand-accent);
-}
-
-.jvw-footer-details[open] > summary::after {
-    content: "-";
-}
-
-.jvw-footer-details-content {
-    border-top: 1px solid var(--jvw-border-soft);
-    padding: 12px 16px 14px;
-    display: grid;
-    gap: 10px;
-}
-
-.site-below-footer-wrap {
-    border-top: 1px solid var(--jvw-border-soft);
-    background: var(--jvw-page-bg);
-}
-
-.ast-footer-copyright p {
-    margin: 0;
-    color: var(--jvw-text-secondary);
-}
-
-@media (min-width: 1024px) {
-    .jvw-site-footer-inner {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: clamp(24px, 3vw, 38px);
-    }
-}
-
 @media (max-width: 900px) {
     .about-anchor {
         top: -90px;
@@ -1673,16 +1553,6 @@ button.wpforms-submit:hover,
 
     .about-contact-card {
         gap: 16px;
-    }
-
-    .jvw-site-footer-panel {
-        padding-top: 22px;
-        padding-bottom: 28px;
-    }
-
-    .jvw-footer-details > summary,
-    .jvw-footer-details-content {
-        padding-inline: 14px;
     }
 }
 </style>				</div>
@@ -1811,45 +1681,88 @@ button.wpforms-submit:hover,
 				</div>
 					</div>
 				</div>
-		<section class="jvw-site-footer-panel" aria-label="Footer">
-	<div class="jvw-site-footer-inner">
-		<nav class="jvw-footer-column" aria-label="Snelle links">
-			<h3 class="jvw-footer-heading">Snelle links</h3>
-			<ul class="jvw-footer-links">
-				<li><a href="#page">Home</a></li>
-				<li><a href="#diensten">Diensten</a></li>
-				<li><a href="projecten.html">Projecten</a></li>
-				<li><a href="#over">Over</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-
-		<section class="jvw-footer-column" aria-labelledby="jvw-footer-contact-title">
-			<h3 id="jvw-footer-contact-title" class="jvw-footer-heading">Contact</h3>
-			<ul class="jvw-footer-links">
-				<li><a href="tel:0646970719">06 46970719</a></li>
-				<li><a href="mailto:info@jvwinfraservice.nl">info@jvwinfraservice.nl</a></li>
-				<li><a href="https://www.linkedin.com/in/joost-van-wageningen-9538163a2/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-			</ul>
-			<p class="jvw-footer-note">Ik reageer meestal dezelfde dag.</p>
-		</section>
-
-		<section class="jvw-footer-column" aria-labelledby="jvw-footer-bedrijfsgegevens">
-			<details class="jvw-footer-details">
-				<summary id="jvw-footer-bedrijfsgegevens">Bedrijfsgegevens</summary>
-				<div class="jvw-footer-details-content">
-					<ul class="jvw-footer-links">
-						<li>Vestigingsadres: Dorpsstraat 63, 3342 BC</li>
-						<li><a href="bedrijfsgegevens.html">Bekijk volledige bedrijfsgegevens</a></li>
-					</ul>
-					<!-- KvK: ... -->
-					<!-- BTW: ... -->
-					<!-- IBAN: ... -->
+		<div class="elementor-element elementor-element-aacf37d e-flex e-con-boxed e-con e-parent" data-id="aacf37d" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-1bf7a78 elementor-absolute elementor-widget elementor-widget-image" data-id="1bf7a78" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img decoding="async" width="1024" height="683" src="assets/images/Nauwkeurig-inmeten-1024x683.jpg" class="attachment-large size-large wp-image-2174" alt="" srcset="assets/images/Nauwkeurig-inmeten-1024x683.jpg 1024w, assets/images/Nauwkeurig-inmeten-1024x683.jpg 300w, assets/images/Nauwkeurig-inmeten-1024x683.jpg 768w, assets/images/Nauwkeurig-inmeten-1024x683.jpg 1536w, assets/images/Nauwkeurig-inmeten-1024x683.jpg 1920w" sizes="(max-width: 1024px) 100vw, 1024px" />															</div>
 				</div>
-			</details>
-		</section>
-	</div>
-</section>
+		<div class="elementor-element elementor-element-c8ba10b e-con-full e-flex e-con e-child" data-id="c8ba10b" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-5032cb5 elementor-widget elementor-widget-image" data-id="5032cb5" data-element_type="widget" data-e-type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+															<img loading="lazy" decoding="async" width="425" height="425" src="logo-jvw-brandkit-white.svg" class="attachment-full size-full wp-image-2594 brandkit-logo" alt="" />															</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-85b5128 e-con-full e-flex e-con e-child" data-id="85b5128" data-element_type="container" data-e-type="container">
+		<div class="elementor-element elementor-element-3a59a03 e-con-full e-flex e-con e-child" data-id="3a59a03" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-9bf9f4f elementor-widget elementor-widget-heading" data-id="9bf9f4f" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h5 class="elementor-heading-title elementor-size-default">Bedrijfsgegevens</h5>				</div>
+				</div>
+				<div class="elementor-element elementor-element-13f29c4 elementor-align-end elementor-mobile-align-start elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="13f29c4" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-text">Vestigingsadres: Dorpsstraat 63, 3342 BC</span>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="bedrijfsgegevens.html">
+											<span class="elementor-icon-list-text">Bedrijfsgegevens</span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+				</div>
+		<div class="elementor-element elementor-element-d85ab13 e-con-full elementor-hidden-mobile e-flex e-con e-child" data-id="d85ab13" data-element_type="container" data-e-type="container">
+				</div>
+		<div class="elementor-element elementor-element-64196b8 e-con-full e-flex e-con e-child" data-id="64196b8" data-element_type="container" data-e-type="container">
+				<div class="elementor-element elementor-element-2ab67db elementor-widget elementor-widget-heading" data-id="2ab67db" data-element_type="widget" data-e-type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h5 class="elementor-heading-title elementor-size-default">Contactinformatie</h5>				</div>
+				</div>
+				<div class="elementor-element elementor-element-7a52e6f elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="7a52e6f" data-element_type="widget" data-e-type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+							<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="tel:0646970719">
+
+												<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" viewBox="0 0 64 64" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#EC7F24;} .st1{opacity:0.2;} .st2{fill:#231F20;} .st3{fill:#FFFFFF;} </style> <g id="Layer_1"> <g> <circle class="st0" cx="32" cy="32" r="32"></circle> </g> <g class="st1"> <g> <path class="st2" d="M29,25.3c-0.4-4.8-5.4-7.1-5.6-7.2C23.1,18,22.9,18,22.7,18c-5.8,1-6.6,4.3-6.7,4.5c0,0.2,0,0.4,0,0.6 c6.9,21.4,21.2,25.3,25.9,26.6c0.4,0.1,0.7,0.2,0.9,0.3c0.1,0,0.2,0.1,0.3,0.1c0.2,0,0.3,0,0.5-0.1c0.1-0.1,3.5-1.7,4.4-6.9 c0-0.2,0-0.5-0.1-0.7c-0.1-0.1-1.9-3.5-6.8-4.7c-0.3-0.1-0.7,0-1,0.2c-1.6,1.3-3.7,2.7-4.6,2.9c-6.2-3-9.7-8.9-9.8-10 c-0.1-0.6,1.3-2.8,3-4.6C28.9,26,29,25.6,29,25.3z"></path> </g> </g> <g> <g> <path class="st3" d="M29,23.3c-0.4-4.8-5.4-7.1-5.6-7.2C23.1,16,22.9,16,22.7,16c-5.8,1-6.6,4.3-6.7,4.5c0,0.2,0,0.4,0,0.6 c6.9,21.4,21.2,25.3,25.9,26.6c0.4,0.1,0.7,0.2,0.9,0.3c0.1,0,0.2,0.1,0.3,0.1c0.2,0,0.3,0,0.5-0.1c0.1-0.1,3.5-1.7,4.4-6.9 c0-0.2,0-0.5-0.1-0.7c-0.1-0.1-1.9-3.5-6.8-4.7c-0.3-0.1-0.7,0-1,0.2c-1.6,1.3-3.7,2.7-4.6,2.9c-6.2-3-9.7-8.9-9.8-10 c-0.1-0.6,1.3-2.8,3-4.6C28.9,24,29,23.6,29,23.3z"></path> </g> </g> </g> <g id="Layer_2"> </g> </g></svg>						</span>
+										<span class="elementor-icon-list-text">06 46970719</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="mailto:info@jvwinfraservice.nl">
+
+												<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" viewBox="0 0 64 64" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#EC7F24;} .st1{opacity:0.2;} .st2{fill:#231F20;} .st3{fill:#E0E0D1;} .st4{fill:#FFFFFF;} </style> <g id="Layer_1"> <g> <circle class="st0" cx="32" cy="32" r="32"></circle> </g> <g> <g class="st1"> <path class="st2" d="M52,44c0,2.2-1.8,4-4,4H16c-2.2,0-4-1.8-4-4V24c0-2.2,1.8-4,4-4h32c2.2,0,4,1.8,4,4V44z"></path> </g> <g> <path class="st3" d="M52,42c0,2.2-1.8,4-4,4H16c-2.2,0-4-1.8-4-4V22c0-2.2,1.8-4,4-4h32c2.2,0,4,1.8,4,4V42z"></path> </g> <g class="st1"> <g> <path class="st2" d="M35.5,30.2c-1.9-2.1-5.1-2.1-7,0L13,43.2c-0.2,0.2-0.3,0.4-0.5,0.6c0.7,1.3,2,2.2,3.4,2.2h32 c1.5,0,2.7-0.9,3.4-2.2c-0.1-0.2-0.3-0.4-0.5-0.6L35.5,30.2z"></path> </g> </g> <g> <g> <path class="st3" d="M35.5,32c-1.9-1.9-5.1-1.9-7,0L13,43.5c-0.2,0.2-0.3,0.3-0.5,0.5c0.7,1.2,2,1.9,3.4,1.9h32 c1.5,0,2.7-0.8,3.4-1.9c-0.1-0.2-0.3-0.3-0.5-0.5L35.5,32z"></path> </g> </g> <g class="st1"> <g> <path class="st2" d="M12.6,20.2c0.7-1.3,2-2.2,3.4-2.2h32c1.5,0,2.7,0.9,3.4,2.2c-0.1,0.2-0.3,0.4-0.5,0.6l-15.4,13 c-1.9,2.1-5.1,2.1-7,0L12.6,20.2z"></path> </g> </g> <g> <g> <path class="st4" d="M28.5,32c1.9,1.9,5.1,1.9,7,0L51,20.5c0.2-0.2,0.3-0.3,0.5-0.5c-0.7-1.2-2-1.9-3.4-1.9H16 c-1.5,0-2.7,0.8-3.4,1.9c0.1,0.2,0.3,0.3,0.5,0.5L28.5,32z"></path> </g> </g> </g> </g> <g id="Layer_2"> </g> </g></svg>						</span>
+										<span class="elementor-icon-list-text">info@jvwinfraservice.nl</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://www.linkedin.com/in/joost-van-wageningen-9538163a2/" target="_blank" rel="noopener noreferrer" aria-label="Bekijk Joost van Wageningen op LinkedIn">
+
+												<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="800px" width="800px" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle style="fill:#EC7F24;" cx="256" cy="256" r="256"></circle> <path style="fill:#d7711d;" d="M256,0c-11.317,0-22.461,0.744-33.391,2.167C348.216,18.53,445.217,125.933,445.217,256 s-97.002,237.47-222.609,253.833C233.539,511.256,244.683,512,256,512c141.385,0,256-114.616,256-256S397.385,0,256,0z"></path> <g> <path style="fill:#FFFFFF;" d="M121.878,376.756v-163.6c0-1.234,1.001-2.235,2.235-2.235h52.295c1.234,0,2.235,1.001,2.235,2.235 v163.6c0,1.234-1.001,2.235-2.235,2.235h-52.295C122.879,378.991,121.878,377.991,121.878,376.756z"></path> <path style="fill:#FFFFFF;" d="M144.696,178.643c-18.719,0-33.948-15.23-33.948-33.948s15.229-33.948,33.948-33.948 c18.719,0,33.948,15.23,33.948,33.948S163.415,178.643,144.696,178.643z"></path> <path style="fill:#FFFFFF;" d="M358.271,378.991c-1.466,0-2.654-1.189-2.654-2.653v-57.835c0-18.978-4.266-50.815-32.835-50.815 s-32.835,31.837-32.835,50.815v57.835c0,1.466-1.189,2.653-2.654,2.653h-51.457c-1.466,0-2.654-1.189-2.654-2.653V213.575 c0-1.466,1.189-2.654,2.654-2.654h40.327c1.466,0,2.654,1.189,2.654,2.654v11.057c0,2.128,2.394,3.41,4.142,2.196 c14.998-10.427,32.488-15.907,50.954-15.907c25.026,0,45.747,9.973,59.922,28.841c11.961,15.92,18.548,37.498,18.548,60.759v75.816 c0,1.466-1.189,2.653-2.654,2.653H358.271z"></path> </g> </g></svg>						</span>
+										<span class="elementor-icon-list-text">Bekijk op LinkedIn</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://youtube.com/@jvw4772?si=N6F5Ns075HbC5VlD" target="_blank" rel="noopener noreferrer" aria-label="Bekijk JVW Infra Service op YouTube">
+
+												<span class="elementor-icon-list-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" height="800px" width="800px" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="#EC7F24"></circle><path d="M44.56 25.94c-.31-1.17-1.22-2.09-2.39-2.39-2.1-.56-10.52-.56-10.52-.56s-8.42 0-10.52.56c-1.17.31-2.09 1.22-2.39 2.39-.56 2.1-.56 6.47-.56 6.47s0 4.37.56 6.47c.31 1.17 1.22 2.09 2.39 2.39 2.1.56 10.52.56 10.52.56s8.42 0 10.52-.56c1.17-.31 2.09-1.22 2.39-2.39.56-2.1.56-6.47.56-6.47s0-4.37-.56-6.47Z" fill="#fff"></path><path d="M29.06 37.07V27.73l8.08 4.67-8.08 4.67Z" fill="#EC7F24"></path></svg>						</span>
+										<span class="elementor-icon-list-text">Bekijk op YouTube</span>
+											</a>
+									</li>
+						</ul>
+						</div>
+				</div>
+				</div>
+				</div>
+					</div>
+				</div>
 		
 				</div>
 		
@@ -1876,7 +1789,7 @@ class="site-footer" id="colophon" itemtype="https://schema.org/WPFooter" itemsco
 					<div class="ast-builder-footer-grid-columns site-below-footer-inner-wrap ast-builder-grid-row">
 											<div class="site-footer-below-section-1 site-footer-section site-footer-section-1">
 								<div class="ast-builder-layout-element ast-flex site-footer-focus-item ast-footer-copyright" data-section="section-footer-builder">
-				<div class="ast-footer-copyright"><p>JVW Infra Service © 2026</p>
+				<div class="ast-footer-copyright"><p>Jvw infraservice 2026</p>
 </div>			</div>
 						</div>
 										</div>

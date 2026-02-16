@@ -806,15 +806,32 @@ button.wpforms-submit:hover,
   max-width: 66ch;
   font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.68;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--jvw-text-primary);
   text-wrap: pretty;
   text-align: center;
   margin-inline: auto;
 }
 
+:root[data-color-mode="dark"] .elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro,
+:root[data-color-mode="dark"] .elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-mode]) .elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro,
+  :root:not([data-color-mode]) .elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
 .elementor-2464 .elementor-element.elementor-element-b2b4671 .elementor-widget-container,
 .elementor-2464 .elementor-element.elementor-element-da038a8 .elementor-widget-container {
   text-align: center;
+}
+
+.elementor-2464 .elementor-element.elementor-element-57fa684 {
+  position: relative;
+  z-index: 2;
 }
 
 .elementor-2464 .elementor-element.elementor-element-b2b4671 .hero-intro:first-child,
@@ -934,6 +951,11 @@ button.wpforms-submit:hover,
     --padding-bottom: 26px;
   }
 
+  .elementor-2464 .elementor-element.elementor-element-57fa684 {
+    margin-top: -14px;
+    z-index: 3;
+  }
+
   .elementor-2464 .elementor-element.elementor-element-93873aa > .elementor-widget-container {
     text-align: center !important;
   }
@@ -947,8 +969,10 @@ button.wpforms-submit:hover,
   }
 
   .elementor-2464 .elementor-element.elementor-element-da038a8 > .elementor-widget-container {
+    max-width: 38ch;
+    margin: 0 auto !important;
     gap: 8px;
-    padding-bottom: 34px;
+    padding: 6px 14px 24px;
   }
 
   .elementor-2464 .elementor-element.elementor-element-da038a8 .hero-intro {

@@ -290,18 +290,8 @@ class="post-2464 page type-page status-publish ast-article-single" id="post-2464
       </p>
       <div class="jvw-hero-refined__actions" aria-label="Snelle acties">
         <a class="about-cta about-cta-primary" href="tel:0646970719">Bel direct</a>
-        <a class="about-cta about-cta-secondary" href="#diensten">Bekijk diensten</a>
       </div>
     </div>
-    <aside class="jvw-hero-refined__bullets" aria-label="Kernwerkzaamheden">
-      <h2 class="jvw-hero-refined__bullets-title">Kernwerkzaamheden</h2>
-      <ul class="jvw-hero-refined__bullet-list">
-        <li>Uitgraven en afvoeren van grond</li>
-        <li>Plaatsen van buitenkasten</li>
-        <li>Meten van aarding</li>
-        <li>Ingraven van kabels en leidingen</li>
-      </ul>
-    </aside>
   </div>
 </section>
 
@@ -727,26 +717,26 @@ button.wpforms-submit:hover,
 .jvw-hero-refined {
   max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(20px, 4vw, 48px) clamp(14px, 3vw, 28px) clamp(20px, 3vw, 40px);
+  padding: clamp(20px, 4vw, 52px) clamp(14px, 3vw, 28px) clamp(26px, 4vw, 58px);
 }
 
 .jvw-hero-refined__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(18px, 3.4vw, 30px);
-  align-items: stretch;
+  gap: 0;
 }
 
 .jvw-hero-refined__content {
   display: grid;
-  gap: clamp(12px, 2.2vw, 20px);
+  gap: clamp(12px, 2.2vw, 22px);
+  max-width: min(100%, 760px);
 }
 
 .jvw-hero-refined__title {
   margin: 0;
   color: var(--e-global-color-astglobalcolor6);
-  font-size: clamp(31px, 8.8vw, 56px);
-  line-height: 1.05;
+  font-size: clamp(30px, 8.8vw, 58px);
+  line-height: 1.04;
   letter-spacing: -1.4px;
   text-wrap: balance;
 }
@@ -760,84 +750,204 @@ button.wpforms-submit:hover,
 }
 
 .jvw-hero-refined__actions {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .jvw-hero-refined__actions .about-cta {
-  width: 100%;
+  width: auto;
+  min-width: 220px;
   min-height: 44px;
-  padding: 12px 16px;
+  padding: 12px 20px;
 }
 
-.jvw-hero-refined__bullets {
-  background: var(--jvw-card-bg);
-  border: 1px solid var(--jvw-card-border);
-  border-radius: 16px;
-  padding: clamp(16px, 2.2vw, 24px);
-  display: grid;
-  gap: 14px;
-}
-
-.jvw-hero-refined__bullets-title {
-  margin: 0;
-  color: var(--e-global-color-astglobalcolor6);
-  font-size: clamp(20px, 3.2vw, 26px);
-  line-height: 1.2;
-}
-
-.jvw-hero-refined__bullet-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.jvw-hero-refined__bullet-list li {
-  position: relative;
-  margin: 0;
-  padding: 10px 12px 10px 32px;
-  border-radius: 10px;
-  color: var(--e-global-color-astglobalcolor6);
-  background: var(--jvw-card-ghost-bg);
-  line-height: 1.45;
-  font-weight: 600;
-}
-
-.jvw-hero-refined__bullet-list li::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--jvw-brand-accent);
-  transform: translateY(-50%);
-}
-
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .jvw-hero-refined__actions {
-    max-width: 520px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: block;
+  }
+
+  .jvw-hero-refined__actions .about-cta {
+    width: 100%;
   }
 }
 
 @media (min-width: 1024px) {
   .jvw-hero-refined {
-    padding-top: clamp(24px, 3.2vw, 52px);
+    padding-top: clamp(28px, 3.4vw, 56px);
+    padding-bottom: clamp(30px, 4vw, 62px);
   }
 
-  .jvw-hero-refined__grid {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
-    gap: clamp(26px, 3.8vw, 50px);
+  .jvw-hero-refined__content {
+    max-width: min(100%, 860px);
   }
 
   .jvw-hero-refined__title {
-    font-size: clamp(40px, 4.8vw, 66px);
+    font-size: clamp(42px, 4.8vw, 68px);
   }
+}
+
+/* Footer: opbouw geinspireerd op Caps Consult */
+.elementor-2464 .elementor-element.elementor-element-aacf37d {
+  display: none !important;
+}
+
+.jvw-site-footer-panel {
+  margin-top: clamp(34px, 5.4vw, 72px);
+  padding: clamp(26px, 3.5vw, 38px) clamp(14px, 3vw, 28px) clamp(24px, 3.8vw, 36px);
+  background: var(--e-global-color-astglobalcolor1);
+  color: var(--e-global-color-astglobalcolor6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.jvw-site-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(18px, 3vw, 30px);
+}
+
+.jvw-site-footer-top {
+  display: grid;
+  gap: clamp(16px, 3vw, 30px);
+}
+
+.jvw-footer-legal-links {
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.jvw-footer-legal-links a {
+  color: var(--e-global-color-astglobalcolor6);
+  text-decoration: none;
+  font-size: 0.97rem;
+  transition: color 0.2s ease;
+}
+
+.jvw-footer-legal-links a:hover {
+  color: var(--jvw-brand-accent-soft);
+}
+
+.jvw-footer-legal-links a:focus-visible {
+  outline: 3px solid var(--jvw-focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.jvw-footer-contact {
+  width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.jvw-footer-contact-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(15px, 1.2vw, 17px);
+  font-weight: 700;
+}
+
+.jvw-footer-contact-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.jvw-footer-cta {
+  width: 100%;
+  min-height: 44px;
+}
+
+.jvw-footer-linkedin,
+.jvw-footer-youtube {
+  display: inline-flex;
+  justify-content: center;
+  color: var(--e-global-color-astglobalcolor6);
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.jvw-footer-linkedin:hover,
+.jvw-footer-youtube:hover {
+  color: var(--jvw-brand-accent-soft);
+}
+
+.jvw-footer-linkedin:focus-visible,
+.jvw-footer-youtube:focus-visible {
+  outline: 3px solid var(--jvw-focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.jvw-footer-company {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: clamp(14px, 2vw, 20px);
+  text-align: center;
+}
+
+.jvw-footer-company p {
+  margin: 0 0 6px;
+  font-size: 0.96rem;
+}
+
+.jvw-footer-company a {
+  color: var(--e-global-color-astglobalcolor6);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.jvw-footer-company a:hover {
+  color: var(--jvw-brand-accent-soft);
+}
+
+@media (min-width: 640px) {
+  .jvw-footer-contact-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .jvw-site-footer-top {
+    grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+    align-items: center;
+  }
+
+  .jvw-footer-legal-links {
+    text-align: left;
+  }
+
+  .jvw-footer-contact {
+    justify-self: end;
+    width: min(100%, 460px);
+  }
+
+  .jvw-footer-contact-title {
+    text-align: left;
+  }
+
+  .jvw-footer-linkedin,
+  .jvw-footer-youtube {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .jvw-footer-company {
+    text-align: left;
+  }
+}
+
+.site-footer .site-below-footer-wrap {
+  background: var(--e-global-color-astglobalcolor1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer .ast-footer-copyright p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.92rem;
 }
 
 /* Responsive verbeteringen: hero + sectietitels */
@@ -1560,7 +1670,7 @@ button.wpforms-submit:hover,
 					</div>
 				</div>
 		<section id="over" class="elementor-element elementor-element-a494862 e-con-full e-flex e-con e-parent about-section" data-id="a494862" data-element_type="container" data-e-type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<span id="contact" class="about-anchor" aria-hidden="true"></span>
+			<span id="over-contact" class="about-anchor" aria-hidden="true"></span>
 			<div class="about-container container">
 				<div class="about-grid">
 					<div class="about-content">
@@ -1768,6 +1878,36 @@ button.wpforms-submit:hover,
 		
 	
 	
+<section id="contact" class="jvw-site-footer-panel" aria-label="Footer">
+	<div class="jvw-site-footer-inner">
+		<div class="jvw-site-footer-top">
+			<nav class="jvw-footer-legal-links" aria-label="Footer links">
+				<a href="#bedrijfsgegevens">Bedrijfsgegevens</a>
+				<a href="cookiebeleid.html">Cookiebeleid</a>
+				<a href="privacybeleid.html">Privacyverklaring</a>
+			</nav>
+
+			<section class="jvw-footer-contact" aria-labelledby="jvw-footer-contact-title">
+				<p id="jvw-footer-contact-title" class="jvw-footer-contact-title">Neem contact met ons op:</p>
+				<div class="jvw-footer-contact-actions">
+					<a class="about-cta about-cta-primary jvw-footer-cta" href="tel:0646970719">Bel ons</a>
+					<a class="about-cta about-cta-primary jvw-footer-cta" href="mailto:info@jvwinfraservice.nl">Mail ons</a>
+				</div>
+				<a class="jvw-footer-linkedin" href="https://www.linkedin.com/in/joost-van-wageningen-9538163a2/" target="_blank" rel="noopener noreferrer">Bekijk LinkedIn-profiel</a>
+				<a class="jvw-footer-youtube" href="https://youtube.com/@jvw4772?si=N6F5Ns075HbC5VlD" target="_blank" rel="noopener noreferrer">YouTube kanaal</a>
+			</section>
+		</div>
+
+		<section id="bedrijfsgegevens" class="jvw-footer-company" aria-label="Bedrijfsgegevens">
+			<p><strong>Bedrijfsgegevens:</strong> Vestigingsadres Dorpsstraat 63, 3342 BC.</p>
+			<p><a href="bedrijfsgegevens.html">Bekijk volledige bedrijfsgegevens</a></p>
+			<!-- KvK: ... -->
+			<!-- BTW: ... -->
+			<!-- IBAN: ... -->
+		</section>
+	</div>
+</section>
+
 </div><!-- .entry-content .clear -->
 
 	
@@ -1789,7 +1929,7 @@ class="site-footer" id="colophon" itemtype="https://schema.org/WPFooter" itemsco
 					<div class="ast-builder-footer-grid-columns site-below-footer-inner-wrap ast-builder-grid-row">
 											<div class="site-footer-below-section-1 site-footer-section site-footer-section-1">
 								<div class="ast-builder-layout-element ast-flex site-footer-focus-item ast-footer-copyright" data-section="section-footer-builder">
-				<div class="ast-footer-copyright"><p>Jvw infraservice 2026</p>
+				<div class="ast-footer-copyright"><p>JVW Infra Service © 2026</p>
 </div>			</div>
 						</div>
 										</div>
